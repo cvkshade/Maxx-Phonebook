@@ -493,19 +493,23 @@ svg path {
         position: absolute;
         width: 100%;
         max-width: 90vw;
-        height: 100%;
+        height: fit-content;
         background-color: rgb(252, 251, 251);
         /* border: 2px solid; */
         box-shadow: 0 0 8px rgba(255, 217, 0, 0.459);
         border-radius: 10px;
         left: 0;
-        top: 0;
+        top: 10%;
     }
     .addBoard .top {
         background-color: rgba(3, 58, 58, 0.808);
-        height: 20%;
+        height: 15%;
         box-shadow: 0 0 10px white;
         display: flex;
+    }
+    .proImg {
+        height: 100px;
+        min-width: 100px;
     }
     .addBoard input {
         width: 100%;
@@ -524,8 +528,20 @@ svg path {
     .personalInfo, .commInfo, .addresses {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
         /* justify-content: center; */
         position: relative;
+    }
+    .addBoard .bottom {
+        background-color: beige;
+        flex-grow: 1;
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .submit, .update {
+        position: static;
+        margin: 5px 0;
     }
 }
