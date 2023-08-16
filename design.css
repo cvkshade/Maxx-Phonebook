@@ -1,0 +1,531 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    /* background-color: #002900c0; */
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+.main 
+{
+    /* background-color: black; */
+    display: flex;
+    gap: 20px;
+    min-height: 100vh;
+    max-height: 100vh;
+    /* padding: 10px; */
+    position: relative;
+    /* overflow-y: scroll; */
+}
+
+.sidebar {
+    backdrop-filter: blur(10px);
+    background-color: aliceblue;
+    box-shadow: 0 0 2px white;
+    width: 25%;
+    color: #fff;
+    position: sticky;
+    /* height: 100%; */
+
+}
+.header {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: #fff;
+    color: rgba(3, 58, 58, 0.808);
+    position: sticky;
+}
+.header button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.header button ion-icon {
+    font-size: 50px;
+}
+.header h1 {
+    text-align: center;
+    text-shadow: 0 0 2px steelblue;
+    font-size: 1.8rem;
+}
+
+.phonebook {
+    backdrop-filter: blur(10px);
+    background-color: white;
+    width: 75%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* position: static; */
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+.contact {
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    height: 140px;
+    min-height: 140px;
+    display: flex;
+    /* align-items: center; */
+    grid-template-columns: 20% 1fr;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+    position: relative;
+    color: rgba(3, 58, 58, 0.808);
+
+}
+.image {
+    background-color: #fff;
+    height: 4rem;
+    width: 4rem;
+    margin-top: 7px;
+    border-radius: 100%;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px 5px steelblue;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+.image img {
+    height: 100%;
+}
+.info {
+    /* background-color: bisque; */
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+}
+.topSec {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.contrl {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    justify-content: flex-end;
+}
+.contrl ion-icon {
+    margin: 1rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+#delete {
+    color: red;
+}
+.name {
+    text-align: center;
+    /* color: darkblue; */
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    font-weight: 800;
+    position: relative;
+    top: -15%
+}
+.contactInfo {
+    position: absolute;
+    bottom: 15%;
+    left: 0;
+    right: 0;
+    height: 30%;
+    display: flex;
+    font-size: 1.3rem;
+    align-items: center;
+    padding-right: 1rem;
+    gap: 15px;
+    justify-content: flex-end;
+    /* background-color: #000000cd; */
+}
+svg {
+    pointer-events: none;
+}
+.contactInfo > span {
+    background-color: rgba(3, 58, 58, 0.808);
+    color: #fff;
+    /* height: 100%; */
+    padding: .4rem 1rem;
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    box-shadow:  0 0 5px steelblue;
+
+}
+.contactCtrl .contactNumber {
+        font-size: 1rem;
+    margin: 5px 10px;
+
+}
+.contactInfo ion-icon {
+    color: #fff;
+    rotate: 360deg;
+    margin-left: 1rem;
+    background-color: green;
+    border-radius: 100%;
+    padding: 3px;
+    box-shadow: 0 0 5px #fff;
+}
+.contactInfo ion-icon:hover {
+    box-shadow: 0 0 25px #fff;
+    cursor: pointer;
+    rotate: 10deg;
+    transition: 500ms;
+
+}
+.toggler {
+    cursor: pointer;
+}
+.toggler:hover {
+    background-color: #fff;
+    color: black;
+    transition: 500ms ease-out;
+}
+
+.addBoard {
+    position: absolute;
+    width: fit-content;
+    max-width: 80vw;
+    height: 30rem;
+    background-color: rgb(252, 251, 251);
+    /* border: 2px solid; */
+    box-shadow: 0 0 8px rgba(255, 217, 0, 0.459);
+    border-radius: 10px;
+    left: 15%;
+    right: 15%;
+    top: 10%;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.close{
+    color: #fff;
+    position: absolute;
+    right: 0;
+    padding: 5px;
+    font-weight: 900;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.addBoard .top {
+    background-color: black;
+    height: 40%;
+    box-shadow: 0 0 10px white;
+    display: flex;
+}
+.imageSec {
+    background-color: transparent;
+    min-width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.proImg {
+    height: 140px;
+    min-width: 140px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+.addBoard .bottom {
+    background-color: beige;
+    flex-grow: 1;
+    display: grid;
+    gap: 15px;
+    padding: 1rem;
+    /* grid-template-rows: 1fr 1fr 2fr; */
+}
+.personalInfo span {
+    flex-grow: 1;
+}
+.personalInfo span input {
+    width: 100%;
+}
+.personalInfo, .commInfo, .addresses {
+    display: flex;
+    gap: 30px;
+    /* justify-content: center; */
+    position: relative;
+}
+.addBoard span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+.addBoard input {
+    /* margin-left: 1rem; */
+    padding: 5px 10px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.986);
+    border-radius: 5px;
+    outline: none;
+}
+.nameDisplay {
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+    width: 80%;
+    /* text-align: center; */
+    /* justify-content: center; */
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+    flex-grow: 1;
+
+    & p {
+        display: inline-block;
+        background-color: firebrick;
+        height: fit-content;
+    }
+}
+.addressInput {
+    padding: 10px;
+}
+.submit, .update {
+    width: 150px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: firebrick;
+    color: #fff;
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 3px black;
+    cursor: pointer;
+}
+.firstname, .lastname, .middlename {
+    color: #fff;
+}
+.address {
+    height: 4rem;
+    width: 100%;
+}
+.addresses{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.hideItem {
+    display: none;
+}
+section.hiddenINfo {
+    display: flex;
+    justify-content: center;
+    /* gap: 2rem; */
+    margin: .5rem 0 0 0;
+}
+.marker {
+    font-weight: 800;
+    font-size: 1rem;
+    padding-right: 10px;
+}
+.modifyer {
+    /* position: absolute; */
+    right: 0;
+    user-select: none;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.editContact, .deleteContact {
+    color: #fff;
+    padding: 5px 17px;
+    font-weight: bold;
+    z-index: 1;
+    cursor: pointer;
+}
+.editContact{
+    background-color: green;
+    border: none;
+    border-radius: 0 0 10px 10px ;
+}
+.deleteContact{
+    background-color: red;
+    border: none;
+    border-radius: 0 0 0 10px ;
+    margin-left: 2rem;
+}
+/* Sidebar */
+
+.navlist {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.navlist  li {
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(3, 58, 58, 0.808);
+    border-radius: 10px;
+    list-style-type: none;
+    overflow: hidden;
+}
+.navlist li div {
+    /* background-color: rgba(3, 58, 58, 0.808); */
+    /* border-radius: 10px; */
+    height: 3rem;
+    display: flex;
+    padding: 0 1rem;
+    text-align: left;
+    justify-content: space-evenly;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 0;
+    color: rgba(3, 58, 58, 0.808);
+}
+.sideImage {
+    background-color: rgba(3, 58, 58, 0.808);
+    height: 30px;
+    width: 30px;
+    margin: 5px 10px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+/*  */
+.navlist li .sideName {
+    /* font-size: 1.2rem; */
+    display: block;
+    width: 40%;
+    font-weight: bolder;
+}
+.navlist li button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+.navlist button svg {
+    height: 24px;
+    width: 24px;
+}
+svg path {
+    fill: rgba(3, 58, 58, 0.808);
+}
+.call-btn svg {
+    background-color: #fff;
+    border-radius: 100%;
+}
+.call-btn svg path {
+    fill: green;
+}
+.sideNum{
+    display: block;
+    font-size: 1px;
+}
+.contact-info {
+    display: none;
+    height: 3rem;
+    background-color: #fff;
+    color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.contactCtrl {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.contact-info:focus-within {
+    display: flex;
+}
+
+/* .navlist li:hover  .contact-info {
+    display: flex;
+    
+} */
+@media (max-width: 768px) {
+
+    .main {
+        display: flex;
+        padding: 0;
+    }
+    .phonebook {
+        display: none;
+    }
+    .sidebar {
+        width: 100%;
+        flex-grow: 1;
+    }
+    .navlist{
+        padding: 5px;
+    }
+
+    .sideImage {
+        margin: 5px 10px;
+    }
+    .addBoard {
+        position: absolute;
+        width: 100%;
+        max-width: 90vw;
+        height: 100%;
+        background-color: rgb(252, 251, 251);
+        /* border: 2px solid; */
+        box-shadow: 0 0 8px rgba(255, 217, 0, 0.459);
+        border-radius: 10px;
+        left: 0;
+        top: 0;
+    }
+    .addBoard .top {
+        background-color: rgba(3, 58, 58, 0.808);
+        height: 20%;
+        box-shadow: 0 0 10px white;
+        display: flex;
+    }
+    .addBoard input {
+        width: 100%;
+        padding: 10px;
+
+        &::placeholder {
+            color: rgba(3, 58, 58, 0.808);
+        }
+    }
+
+
+    .addBoard .nameDisplay {
+        display: none;
+    }
+    
+    .personalInfo, .commInfo, .addresses {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        /* justify-content: center; */
+        position: relative;
+    }
+}
